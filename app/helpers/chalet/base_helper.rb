@@ -1,0 +1,2 @@
+module Chalet::BaseHelper
+end

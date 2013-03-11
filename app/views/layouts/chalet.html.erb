@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin - ForestChalet</title>
+    <%= stylesheet_link_tag    "chalet/chalet", :media => "all" %>
+    <%= javascript_include_tag "chalet/chalet" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <!--
+    <header></header>
+    -->
+    <section>
+
+      <div id="sidebar">
+        <div id="avatar-area">
+          <%= image_tag gravatar("miclle.zheng@gmail.com", :size => 160) %>
+        </div>
+
+        <ul class="nav nav-list">
+          <li class="nav-header">List header</li>
+          <li class="active">
+            <a href="#">Post</a>
+          </li>
+
+          <li class="divider"></li>
+
+          <li><a href="#">Help</a></li>
+
+        </ul>
+
+      </div>
+
+      <div id="main">
+        <%= yield %>
+      </div>
+
+    </section>
+
+  </body>
+</html>

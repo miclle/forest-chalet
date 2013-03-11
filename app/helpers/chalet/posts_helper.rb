@@ -1,0 +1,2 @@
+module Chalet::PostsHelper
+end

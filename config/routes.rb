@@ -1,4 +1,13 @@
 ForestChalet::Application.routes.draw do
+
+  resources :posts, :only => [:index, :show]
+
+  root :to => 'posts#index'
+
+  namespace :chalet do
+    resources :posts
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
