@@ -12,4 +12,31 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.ui.resizable
+
+//= require markdown/Markdown.Converter
+//= require markdown/Markdown.Sanitizer
+//= require markdown/Markdown.Editor
+//= require markdown/jquery.markdown
+
+$(function(){
+
+  $("#markdown").resizable({
+    handles: "e",
+    resize: function(event, ui) {
+      console.log(ui);
+    }
+  });
+
+  var converter = Markdown.getSanitizingConverter();
+  // converter.hooks.chain("preBlockGamut", function (text, rbg) {
+  //   return text.replace(/^ {0,3}""" *\n((?:.*?\n)+?) {0,3}""" *$/gm, function (whole, inner) {
+  //     return "<blockquote>" + rbg(inner) + "</blockquote>\n";
+  //   });
+  // });
+  var editor = new Markdown.Editor(converter);
+  editor.run();
+
+
+
+});

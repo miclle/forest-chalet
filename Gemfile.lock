@@ -69,7 +69,6 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.6)
       multipart-post (~> 1.1)
-    github-markdown (0.5.3)
     hike (1.2.1)
     httpauth (0.2.0)
     i18n (0.6.4)
@@ -141,6 +140,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (2.2.2)
     ref (1.0.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -188,7 +188,6 @@ DEPENDENCIES
   carrierwave (~> 0.6.2)
   carrierwave-upyun (= 0.1.6)
   coffee-rails (~> 3.2.2)
-  github-markdown
   jquery-rails (~> 2.2.1)
   jquery-ui-rails (~> 4.0.1)
   kaminari (~> 0.14.1)
@@ -199,6 +198,7 @@ DEPENDENCIES
   rails (= 3.2.12)
   rails-i18n (~> 0.7.2)
   rails-timeago (~> 2.1.1)
+  redcarpet (~> 2.2.2)
   rest-client (~> 1.6.7)
   sass-rails (~> 3.2.6)
   second_level_cache!

@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap
+ *= require jquery.ui.resizable
  *= require_self
  */
 
@@ -84,7 +85,24 @@ section{
   background-color: #F4F4F4;
 }
 
+.content-section{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  top: 77px;
+}
 
+#markdown{ width: 50%; float: left; position: absolute; top: 0; bottom: 0;}
+.ui-resizable-e{ width: 5px; background: #E1E1E1;}
+
+.markdown-input{ width: 100%; margin: 0; padding: 0; background: #FFF; border: none; box-shadow: none; resize: none; position: absolute; top: 0; bottom: 0;}
+.markdown-input:focus{
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+#markdown-preview{ width: 50%; height: 100%; overflow: auto; float: right; position: absolute; right: 0; top: 0; bottom: 0;}
 
 
 

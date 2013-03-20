@@ -43,10 +43,8 @@ gem 'sorcery', '~> 0.8.1'
 gem 'acts-as-taggable-on', '~> 2.3.3'
 
 # Markdown
-gem 'github-markdown', :require => 'github/markdown'
-
-# gem 'redcarpet', '~> 2.2.1'   # https://github.com/vmg/redcarpet
-
+# gem 'github-markdown', :require => 'github/markdown'
+gem 'redcarpet', '~> 2.2.2'   # https://github.com/vmg/redcarpet
 gem 'pygments.rb', '~> 0.3.1' # https://github.com/tmm1/pygments.rb
 
 gem 'second_level_cache', :git => 'git://github.com/csdn-dev/second_level_cache.git'
