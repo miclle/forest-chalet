@@ -14,10 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.resizable
 
-//= require markdown/Markdown.Converter
-//= require markdown/Markdown.Sanitizer
-//= require markdown/Markdown.Editor
-//= require markdown/jquery.markdown
+//= require markdown/js-markdown-extra
 
 $(function(){
 
@@ -28,14 +25,22 @@ $(function(){
     }
   });
 
-  var converter = Markdown.getSanitizingConverter();
-  // converter.hooks.chain("preBlockGamut", function (text, rbg) {
-  //   return text.replace(/^ {0,3}""" *\n((?:.*?\n)+?) {0,3}""" *$/gm, function (whole, inner) {
-  //     return "<blockquote>" + rbg(inner) + "</blockquote>\n";
-  //   });
-  // });
-  var editor = new Markdown.Editor(converter);
-  editor.run();
+  // var converter = Markdown.getSanitizingConverter();
+  // // converter.hooks.chain("preBlockGamut", function (text, rbg) {
+  // //   return text.replace(/^ {0,3}""" *\n((?:.*?\n)+?) {0,3}""" *$/gm, function (whole, inner) {
+  // //     return "<blockquote>" + rbg(inner) + "</blockquote>\n";
+  // //   });
+  // // });
+  // var editor = new Markdown.Editor(converter);
+  // editor.run();
+
+
+  $(document).delegate('.markdown-input', 'change', function(event){
+    var markdown = $(this).val();
+    var html = Markdown(markdown);
+    var preview = $(this).attr('data-markdown-preview');
+    $(preview).html(html);
+  });
 
 
 

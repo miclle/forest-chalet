@@ -21,13 +21,13 @@
     <div id="wmd-button-bar"></div>
 
     <div id="markdown-preview">
-      <div id="wmd-preview">
+      <div id="post-markdown-preview">
         Preview content
       </div>
     </div>
 
     <div id="markdown">
-      <%= f.text_area :content, :class => "markdown-input", :id => "wmd-input" %>
+      <%= f.text_area :content, :class => "markdown-input", :data => { "markdown-preview" => "#post-markdown-preview"} %>
     </div>
 
 
