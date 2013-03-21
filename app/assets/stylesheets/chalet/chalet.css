@@ -18,6 +18,10 @@ body{
   background: url("admin-bg.png") repeat-x;
 }
 
+::selection {
+  background: rgba(255, 185, 41, .5);
+}
+
 header{
   height: 51px;
 }
@@ -77,19 +81,22 @@ section{
   background: transparent;
 }
 
-.header-section{
+.page-header{
+  height: 30px;
+  margin: 0;
   padding: 20px;
-  height: 36px;
-  overflow: visible;
-  border-bottom: 1px solid #E1E1E1;
   background-color: #F4F4F4;
+  border-bottom: 1px solid #E1E1E1;
 }
+.page-header h3{ margin: 0; line-height: 30px; font-weight: normal;}
 
 .content-section{
-  width: 100%;
+  overflow: auto;
   position: absolute;
+  top: 71px;
   bottom: 0;
-  top: 77px;
+  left: 0;
+  right: 0;
 }
 
 #markdown-editor .ui-resizable-e{ width: 5px; border-left: 1px solid #E1E1E1; background: transparent; cursor: col-resize; right: -2.5px;}
@@ -142,6 +149,34 @@ section{
   border: 1px solid #CCC;
   padding: 6px 13px;
 }
+
+.post-item{
+  display: block;
+  float: left;
+  width: 20%;
+  height: 250px;
+  overflow: hidden;
+  padding: 20px;
+  border-right: 1px solid rgba(0, 0, 0, 0.075);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+  -webkit-transition: width .2s ease-out;
+  -moz-transition: width .2s ease-out;
+  -o-transition: width .2s ease-out;
+  -ms-transition: width .2s ease-out;
+  transition: width .2s ease-out;
+  clear: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
 
 
 

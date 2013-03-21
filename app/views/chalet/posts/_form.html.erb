@@ -11,8 +11,12 @@
   <% end %>
 
 
-  <div class="header-section">
-    <%= f.text_field :title %>
+  <div class="page-header">
+    <div class="form-inline">
+    <%= f.text_field :title, class: "input-xxlarge", placeholder: "Post title" %>
+    <%= f.submit "Save", class: "btn btn-info" %>
+    <%= link_to "Delete", chalet_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right" %>
+    </div>
   </div>
 
   <div class="content-section" id="markdown-editor">
@@ -22,7 +26,7 @@
     </div>
 
     <div id="markdown-input">
-      <%= f.text_area :content, :class => "markdown-input", :data => { "markdown-preview" => "#markdown-preview"} %>
+      <%= f.text_area :content, class: "markdown-input", data: { "markdown-preview" => "#markdown-preview"} %>
     </div>
 
   </div>

@@ -14,7 +14,15 @@
         var $preview = jQuery($textarea.attr('data-markdown-preview'));
 
         var update = function(){
-          $preview.html(Markdown($textarea.val()));
+
+          console.log("--- markdown parse start ---");
+
+          // $preview.html(Markdown($textarea.val()));
+
+          var converter = new Markdown.Converter();
+          $preview.html(converter.makeHtml($textarea.val()));
+
+          console.log("--- markdown parse done ---");
         }
 
         $textarea.bind('change keypress keyup keydown mousedown mouseup blur cut paste', update);
@@ -22,16 +30,12 @@
         update();
 
         $textarea.bind('scroll', function(){
-
           var scrollTop = $textarea.scrollTop();
-
           var textareaScrollHeight = $textarea[0].scrollHeight;
-
           var previewScrollHeight = $preview[0].scrollHeight;
-
           $preview.scrollTop( scrollTop / textareaScrollHeight * previewScrollHeight );
-
         });
+
       });
 
     }

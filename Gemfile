@@ -47,6 +47,9 @@ gem 'github-markdown', :require => 'github/markdown'
 gem 'redcarpet', '~> 2.2.2'   # https://github.com/vmg/redcarpet
 gem 'pygments.rb', '~> 0.3.1' # https://github.com/tmm1/pygments.rb
 
+# gem 'reverse_markdown', '~> 0.4.4'
+# gem 'html2markdown', '~> 0.0.3'
+
 gem 'second_level_cache', :git => 'git://github.com/csdn-dev/second_level_cache.git'
 
 # To use ActiveModel has_secure_password

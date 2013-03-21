@@ -8,6 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap
  *= require_self
  */
 
@@ -18,7 +19,9 @@ body {
   font-size:14px;
   line-height:22px;
   color:#444;
+  background: transparent;
 }
+
 input, textarea, select { font-size:12px; }
 textarea { overflow:auto; }
 
@@ -49,25 +52,11 @@ a.light:hover { color:#222;}
 
 h1, h2, h3, h4 { font-weight:normal; }
 
+.navbar .container { width: 940px; }
+.navbar-inner{ background:#111 url("background-top.png") top repeat-x; }
+
 #wrapper{ width:100%;}
 .shelld { width:960px; margin:0 auto; }
-
-#top{
-  height:40px;
-  position:fixed;
-  z-index:99999;
-  top:0;
-  width:100%;
-  background:#111 url("background-top.png") top repeat-x;
-  box-shadow:0 1px 2px rgba(0,0,0,0.5);
-  -moz-box-shadow:0 1px 2px rgba(0,0,0,0.5);
-  -webkit-box-shadow:0 1px 2px rgba(0,0,0,0.5);
-}
-#navigation{ float:left; height:40px; line-height:40px; font-size:12px;}
-#navigation ul{ float:left; display:inline;}
-#navigation ul li{ float:left; display:inline; margin-right:15px; }
-#navigation ul li a{ height:25px; line-height:25px; color:#BABABA;}
-#navigation ul li.active a{ font-weight:bold; color:#FFF;}
 
 #header { height:200px; clear:both;}
 #header .title{ float:left; width:650px; padding:50px 0 0 0;}
@@ -134,22 +123,6 @@ h1, h2, h3, h4 { font-weight:normal; }
 .post .post-meta .comment{ float:right;}
 .post .line{ display:block; height:1px; overflow:hidden; clear:both; font-size:0; background:url("line-bg.png") 0 0 repeat-x;}
 
-.post .form .title{ font-size:22px;}
-.post .form label{ display:block; float:left; width:60px; padding:0 5px 0 0; text-align:right;}
-.post .form input.field{ padding:2px; color:#625843; border:none; border-bottom:1px solid #A4A298; background:transparent;}
-.post .form .input-wrapper{padding:0 0 5px 0;}
-.post .form .textarea-wrapper{ margin-bottom:10px; border:1px dotted #625843;}
-.post .form .action-wrapper{ height:auto; overflow:hidden;}
-.post .form .action-wrapper li{ float:left; margin-right:15px; list-style:none;}
-.post .form .action-wrapper label{ display:inline; float:none;}
-.post .form .button-wrapper{}
-.post .form .tags-wrapper{ padding:5px 0 15px 0;}
-.post .form .tags-wrapper .input-wrapper.first{ padding-bottom:10px;}
-.post .form .submit-button{ margin:0 auto;}
-#post-content-toolbar-wrapper{ height:20px}
-#post-title{ width:650px; font-size:22px;}
-#post-tag{ width:650px;}
-
 /* jquery.tagsinput */
 div.tagsinput { border:1px solid #A4A298; padding:5px; width:300px; height:100px; overflow-y: auto;}
 div.tagsinput span.tag { border:1px solid #a5d24a; -moz-border-radius:2px; -webkit-border-radius:2px; display: block; float: left; padding:0 5px; text-decoration:none; background: #cde69c; color: #638421; margin-right: 5px; margin-bottom:5px; font-family: helvetica;  font-size:13px;}
@@ -166,8 +139,7 @@ div.tagsinput div { display:block; float: left; }
 a.comment-it { text-decoration:underline; background:url(comment.gif) no-repeat right 2px; padding-right:14px; margin-right:5px;}
 a.comment-it:hover { text-decoration:none; }
 
-/*.blog-pagging{ height:28px; line-height:28px; text-align:right; color:#b6b2a5; clear:both;}*/
-
+/* pagination */
 .pagination{ line-height: 18px; }
 .pagination span{ display: inline-block; margin: 0 2px; color: #78756C; }
 .pagination span.current{ padding: 2px 5px; background: #8D2C2D; color: #FFF;}
@@ -176,59 +148,10 @@ a.comment-it:hover { text-decoration:none; }
 
 .blog-pagging-holder { float:right; }
 
-.post-comments { line-height:16px; padding-top:10px; }
-.post-comments h5{ font-size:14px;}
-.post-comments ol{ list-style-type:none; padding-top:3px; }
-.post-comments ol li{ border-bottom:1px dashed #111; padding:5px 0 10px 0; }
-.post-comments .comment-image{ float:left; width:50px; padding-top:5px;}
-.post-comments .comment-entry{ padding:0 0 0 60px; }
-.post-comments .comment-entry p{ padding-top:3px; }
-.post-comments .comment-entry p.comment-meta{ float:right;}
-.post-comments .comment-meta a{ text-decoration:underline; margin-right:5px;}
-.post-comments .comment-meta a:hover{ text-decoration:none;}
-.post-comments .comment-pagging{ overflow:hidden; padding:5px 0;}
-.post-comments .comment-pagging .pagination{ float:right;}
-
-.submit-comment { padding-top:12px; }
-
-.comment-form { padding-top:14px; }
-.comment-form .field{ display:block; overflow:hidden; margin-bottom:12px; padding:0 0 10px 0;}
-.comment-form .textarea-field{ padding-top:10px;}
-.comment-form .field span.title{ display:block; float:left; width:80px; padding:2px 5px 0 0; text-align:right;}
-.comment-form .field input { width:300px; padding:2px 3px; border:0; border-bottom:1px solid #a4a298; background:transparent; color:#a4a298; }
-.comment-form .field input.error{ border-bottom:1px solid #C5462B;}
-.comment-form .field textarea { width:600px; height:75px; margin-top:5px; padding:2px 3px; color:#a4a298; border:1px solid #a4a298; background:transparent;}
-.comment-form .field textarea.error{ border:1px solid #C5462B;}
-.comment-form .button{ height:45px; overflow:hidden; padding:0 23px 0 0;}
-.comment-form .submit-button { display:block; width:94px; height:44px; margin:0 0 0 auto; cursor:pointer; background:url(submit-button.png);}
-.comment-form .submit-button:hover { background:url(submit-button-h.png)}
-.comment-form .error-message{ display:none; padding:2px 0 0 5px; color:#C5462B;}
-.comment-form .error-message.comment{ padding:2px 25px 0 0; text-align:right;}
-
 .submit-button { display:block; width:94px; height:44px; margin:0 0 0 auto; cursor:pointer; background:url(submit-button.png);}
 .submit-button:hover { background:url(submit-button-h.png)}
 
 .alert { padding:0 0 0 20px; background:url(alert.gif) no-repeat 0 3px; color:#8d2c2d; white-space:nowrap; }
-
-.contact-form { padding-top:20px; width:436px; }
-.contact-form .alert{ position:absolute; left:450px; top:8px; display:none; }
-.contact-form h5{ padding-bottom:12px;}
-.contact-form p{ position:relative; margin-bottom:12px; }
-.contact-form .field{ width:436px; height:37px; background:url(contact-field.gif) no-repeat 0 0; display:block;  padding:1px 0 0 0; }
-.contact-form .field input{ width:416px; }
-
-
-.contact-form .textarea-field{ width:436px; height:99px; background:url(contact-textarea-field.gif) no-repeat 0 0; display:block; }
-.contact-form .textarea-field textarea { width:416px; height:75px; }
-.contact-form .textarea-field textarea,
-.contact-form .field input{ color:#a4a298; font-size:12px; border:0; background:transparent; padding:10px; }
-
-.contact-form .field-error .field,
-.contact-form .field-error .textarea-field{ background-position:0 bottom; }
-.contact-form .field-error .alert { display:block; }
-
-.contact-form .field-error input,
-.contact-form .field-error textarea{ color:#8d2c2d; }
 
 .gallery {}
 .gallery ul{ list-style-type:none; font-size:0; line-height:0; width:991px; margin-right:-11px; padding:0 !important; }
@@ -244,19 +167,6 @@ a.comment-it:hover { text-decoration:none; }
 
 #screen { background:#fff; width:100%; height:100%; position:absolute; top:0; left:0; z-index:100; display:none;
           opacity:0.8; -moz-opacity:0.8; filter:alpha(opacity=80);}
-
-.abs-holder { font-size:0; line-height:0; width:0; height:0; position:absolute; top:0; left:50%; z-index:101;}
-.login { position:absolute; top:200px; left:-192px; width:384px; background:url(login-c.gif) repeat-y 0 0; font-size:12px; line-height:16px; color:#a4a298; display:none; }
-.login-t { width:384px; background:url(login-t.gif) no-repeat 0 0;}
-.login-b { height:100%; background:url(login-b.gif) no-repeat 0 bottom; padding:10px 16px 12px 13px;}
-.login h3 { color:#2d758d; border-bottom:solid 1px #e0ded3; padding-bottom:12px; margin-bottom:12px; }
-
-.login .field { width:356px; height:34px; background:url(login-field.gif); display:block; padding:4px 0 0 0; margin-bottom:12px;}
-.login .field input{ color:#a4a298; font-size:12px; border:0; background:transparent;  padding:7px; width:342px;}
-.login .alert { padding-top:3px; padding-bottom:2px; display:block; margin-top:6px; position:relative; left:-2px; }
-
-.login-button { float:right; width:94px; height:44px; cursor:pointer; background:url(login-button.gif) no-repeat 0 0; position:relative; right:-5px; z-index:4;}
-.login-button:hover { background-position:0 bottom;}
 
 .msg-thanks { padding:10px; background:#f1efe8; margin-bottom:12px; border-top:solid 1px #d0cdc3; border-bottom:solid 1px #d0cdc3; color:#2d758d;}
 

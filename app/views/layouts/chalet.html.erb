@@ -7,23 +7,31 @@
     <%= javascript_include_tag "chalet/chalet" %>
   </head>
   <body>
-    <!--
-    <header></header>
-    -->
+
     <section>
 
       <div id="sidebar">
         <div id="avatar-area">
-          <%#= image_tag gravatar("miclle.zheng@gmail.com", :size => 160) %>
+          <%= image_tag gravatar(current_user.email, :size => 160) %>
         </div>
 
         <ul class="nav nav-list">
+
           <li class="nav-header">List header</li>
-          <li class="active">
-            <a href="#">Post</a>
+
+          <li class="<%= 'active' if controller_name == "posts" -%>">
+            <%= link_to content_tag('i', nil, class: "icon-white icon-folder-close") + " Post", chalet_posts_path %>
           </li>
 
           <li class="divider"></li>
+
+          <li>
+            <%= link_to content_tag('i', nil, class: "icon-white icon-user") + " Account", "#" %>
+          </li>
+
+          <li>
+            <%= link_to content_tag('i', nil, class: "icon-white icon-off") + " Logout", logout_path %>
+          </li>
 
           <li><a href="#">Help</a></li>
 

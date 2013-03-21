@@ -14,7 +14,9 @@
 //= require jquery_ujs
 //= require jquery.ui.resizable
 
-//= require markdown/js-markdown-extra
+// require markdown/js-markdown-extra
+
+//= require markdown/Markdown.Converter
 
 //= require jquery.plugins
 

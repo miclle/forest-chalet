@@ -11,16 +11,12 @@
   </head>
   <body>
 
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-      <!-- Top -->
-      <div id="top">
-        <div class="shelld">
-          <!-- Navigation -->
-          <div id="navigation">
-            <ul>
-              <li <%= raw controller_name == "posts" ? 'class="active"' : '' %>>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Title</a>
+          <ul class="nav">
+            <li <%= raw controller_name == "posts" ? 'class="active"' : '' %>>
                 <%= link_to "Blog", posts_path%>
               </li>
               <li>
@@ -35,10 +31,13 @@
               <li>
                 <a href="http://twitter.com/miclle" target="_blank">Twitter</a>
               </li>
-            </ul>
-          </div><!-- End Navigation -->
+          </ul>
         </div>
-      </div><!-- End Top -->
+      </div>
+    </div>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
 
       <div id="header" class="header-posts">
         <div class="shelld">

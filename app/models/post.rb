@@ -13,4 +13,10 @@ class Post < ActiveRecord::Base
 
   attr_accessible :cached_tag_list, :category, :comments_count, :content, :content_html, :slug_url, :summary, :title, :view_count
 
+  before_save :markdown2html
+
+  def markdown2html
+    self.content_html = Markdown.new(self.content).to_html
+  end
+
 end
