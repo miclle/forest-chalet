@@ -11,6 +11,24 @@ class PostsController < ApplicationController
     end
   end
 
+  def category
+    if params[:name].nil?
+      @posts = Post.page params[:page]
+    else
+      @posts = Post.tagged_with( params[:name], :on => :categories ).page params[:page]
+    end
+    render :index
+  end
+
+  def tag
+    if params[:name].nil?
+      @posts = Post.page params[:page]
+    else
+      @posts = Post.tagged_with( params[:name], :on => :tags ).page params[:page]
+    end
+    render :index
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
