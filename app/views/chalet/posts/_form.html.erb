@@ -2,7 +2,6 @@
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
       <% @post.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -16,20 +15,15 @@
     <%= f.text_field :title %>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="markdown-editor">
 
-    <div id="wmd-button-bar"></div>
-
-    <div id="markdown-preview">
-      <div id="post-markdown-preview">
-        Preview content
-      </div>
+    <div id="markdown-preview" class="markdown-preview">
+      Preview content
     </div>
 
-    <div id="markdown">
-      <%= f.text_area :content, :class => "markdown-input", :data => { "markdown-preview" => "#post-markdown-preview"} %>
+    <div id="markdown-input">
+      <%= f.text_area :content, :class => "markdown-input", :data => { "markdown-preview" => "#markdown-preview"} %>
     </div>
-
 
   </div>
 

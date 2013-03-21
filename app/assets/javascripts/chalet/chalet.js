@@ -16,32 +16,20 @@
 
 //= require markdown/js-markdown-extra
 
+//= require jquery.plugins
+
 $(function(){
 
-  $("#markdown").resizable({
+  $markdown_editor = $('#markdown-editor');
+  $markdown_preview = $('#markdown-preview');
+
+  $("#markdown-input").resizable({
     handles: "e",
     resize: function(event, ui) {
-      console.log(ui);
+      $markdown_preview.width($markdown_editor.width() - ui.size.width - 10); //10 is padding value
     }
   });
 
-  // var converter = Markdown.getSanitizingConverter();
-  // // converter.hooks.chain("preBlockGamut", function (text, rbg) {
-  // //   return text.replace(/^ {0,3}""" *\n((?:.*?\n)+?) {0,3}""" *$/gm, function (whole, inner) {
-  // //     return "<blockquote>" + rbg(inner) + "</blockquote>\n";
-  // //   });
-  // // });
-  // var editor = new Markdown.Editor(converter);
-  // editor.run();
-
-
-  $(document).delegate('.markdown-input', 'change', function(event){
-    var markdown = $(this).val();
-    var html = Markdown(markdown);
-    var preview = $(this).attr('data-markdown-preview');
-    $(preview).html(html);
-  });
-
-
+  $('.markdown-input').markdown();
 
 });

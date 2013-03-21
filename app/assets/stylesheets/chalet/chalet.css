@@ -92,19 +92,56 @@ section{
   top: 77px;
 }
 
-#markdown{ width: 50%; float: left; position: absolute; top: 0; bottom: 0;}
-.ui-resizable-e{ width: 5px; background: #E1E1E1;}
+#markdown-editor .ui-resizable-e{ width: 5px; border-left: 1px solid #E1E1E1; background: transparent; cursor: col-resize; right: -2.5px;}
 
-.markdown-input{ width: 100%; margin: 0; padding: 0; background: #FFF; border: none; box-shadow: none; resize: none; position: absolute; top: 0; bottom: 0;}
+#markdown-input{ width: 50%; float: left; position: absolute; top: 0; bottom: 0;}
+
+
+.markdown-input{
+  width: 100%;
+  margin: 0;
+  padding: 5px;
+  background: #FFF;
+  border: none;
+  box-shadow: none;
+  resize: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .markdown-input:focus{
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
 
-#markdown-preview{ width: 50%; height: 100%; overflow: auto; float: right; position: absolute; right: 0; top: 0; bottom: 0;}
+#markdown-preview{
+  width: 50%;
+  height: 100%;
+  padding: 5px;
+  overflow: auto;
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-
+.markdown-preview table { margin: 15px 0; border-collapse: collapse; border-spacing: 0; font-size: 100%; font: inherit; }
+.markdown-preview table tr { border-top: 1px solid #CCC; background-color: white; }
+.markdown-preview table tr:nth-child(2n) { background-color: #F8F8F8; }
+.markdown-preview table th { font-weight: bold; }
+.markdown-preview table th,
+.markdown-preview table td {
+  border: 1px solid #CCC;
+  padding: 6px 13px;
+}
 
 
 
