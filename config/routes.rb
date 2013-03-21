@@ -1,5 +1,8 @@
 ForestChalet::Application.routes.draw do
 
+  match "posts/category(/:name)" => "posts#category"
+  match "posts/tag(/:name)" => "posts#tag"
+
   resources :posts, :only => [:index, :show]
 
   root :to => 'posts#index'

@@ -1,52 +1,45 @@
-<p id="notice"><%= notice %></p>
+<!-- Content -->
+<div id="content">
 
-<p>
-  <b>User:</b>
-  <%= @post.user %>
-</p>
+  <!-- Post -->
+  <div class="post">
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+    <div class="title">
+      <h2><%= @post.title %></h2>
+      <span class="date"><%= @post.created_at.strftime("%Y年%m月%d日") %></span>
+    </div>
 
-<p>
-  <b>Summary:</b>
-  <%= @post.summary %>
-</p>
+    <div class="entry">
+      <%= raw @post.content_html %>
+    </div>
+    <div class="post-meta">
+      <p class="left">
+        Posted in:
+        <% @post.category_list.each do |category| %>
+          <%= link_to category, {:controller => :posts, :action => :category, :name => category }%>
+        <% end %>
+      </p>
+      <p class="right">
+        <a href="#post-comment-anchor" class="comment-it">Be the newly to comment!</a>
+        Comments: <span id="count-comment"><%= @post.comments_count %></span>
+      </p>
+      <div class="clear">&nbsp;</div>
 
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
+      <p>Tags:
+        <% @post.tag_list.each do |tag| %>
+          <%= link_to tag, {:controller => :posts, :action => :tag, :name => tag } %>
+        <% end %>
+      </p>
+      <div class="clear">&nbsp;</div>
+    </div>
 
-<p>
-  <b>Content html:</b>
-  <%= raw @post.content_html %>
-</p>
+    <div class="line">&nbsp;</div>
+  </div>
+  <!-- End Post -->
 
-<p>
-  <b>Slug url:</b>
-  <%= @post.slug_url %>
-</p>
+</div>
+<!-- End Content -->
 
-<p>
-  <b>View count:</b>
-  <%= @post.view_count %>
-</p>
-
-<p>
-  <b>Comments count:</b>
-  <%= @post.comments_count %>
-</p>
-
-<p>
-  <b>Cached tag list:</b>
-  <%= @post.cached_tag_list %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @post.category %>
-</p>
-
+<!-- Sidebar -->
+<%#= render "sidebar" %>
+<!-- End Sidebar -->
