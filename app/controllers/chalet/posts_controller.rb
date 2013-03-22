@@ -28,7 +28,7 @@ class Chalet::PostsController < Chalet::BaseController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to chalet_posts_url, notice: 'Post was successfully created.' }
+        format.html { redirect_to chalet_posts_url(chrome_bug_workaround: 177855), notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
