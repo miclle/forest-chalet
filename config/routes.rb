@@ -13,7 +13,7 @@ ForestChalet::Application.routes.draw do
   root :to => 'posts#index'
 
   namespace :chalet do
-    resources :posts
+    resources :posts, :except => :show
   end
 
   # The priority is based upon order of creation:
