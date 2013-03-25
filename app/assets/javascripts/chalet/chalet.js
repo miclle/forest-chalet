@@ -18,6 +18,8 @@
 
 //= require markdown/Markdown.Converter
 
+//= require md5
+
 //= require jquery.plugins
 
 $(function(){

@@ -14,8 +14,10 @@
 
   <div class="page-header">
     <div class="form-inline">
-    <%= f.text_field :title, class: "input-xxlarge", placeholder: "Post title" %>
+    <%= f.text_field :title, class: "input-xxlarge", placeholder: "Post title", require: true %>
+
     <%= f.submit "Save", class: "btn btn-info" %>
+
     <%= link_to "Delete", chalet_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right" if action_name == "edit" %>
     </div>
   </div>
