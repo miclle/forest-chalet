@@ -24,7 +24,6 @@ gem 'rails-i18n', '~> 0.7.2'
 
 gem 'jquery-rails', '~> 2.2.1'
 
-gem 'sass-rails', '~> 3.2.6'
 gem 'bootstrap-sass', '~> 2.3.0.1'
 
 gem 'kaminari', '~> 0.14.1'
@@ -43,7 +42,10 @@ gem 'sorcery', '~> 0.8.1'
 gem 'acts-as-taggable-on', '~> 2.3.3'
 
 # Markdown
+gem 'codemirror-rails', '~> 3.02'
+
 gem 'github-markdown', :require => 'github/markdown'
+
 gem 'redcarpet', '~> 2.2.2'   # https://github.com/vmg/redcarpet
 gem 'pygments.rb', '~> 0.3.1' # https://github.com/tmm1/pygments.rb
 

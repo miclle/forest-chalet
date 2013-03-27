@@ -10,6 +10,7 @@
  *
  *= require bootstrap
  *= require jquery.ui.resizable
+ *= require codemirror
  *= require_self
  */
 

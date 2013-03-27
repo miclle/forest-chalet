@@ -14,9 +14,13 @@
 //= require jquery_ujs
 //= require jquery.ui.resizable
 
-// require markdown/js-markdown-extra
+//= require codemirror
+//= require codemirror/utils/overlay
+//= require codemirror/modes/xml
+//= require codemirror/modes/markdown
+//= require codemirror/modes/gfm
 
-//= require markdown/Markdown.Converter
+//= require markdown/marked
 
 //= require md5
 
@@ -34,6 +38,21 @@ $(function(){
     }
   });
 
-  $('.markdown-input').markdown();
+  var editor = CodeMirror.fromTextArea(document.getElementById("post_content"), {
+    mode: 'gfm',
+    theme: "default",
+    lineWrapping: true,
+    onCursorActivity: function() {
+      editor.setLineClass(hlLine, null, null);
+      hlLine = editor.setLineClass(editor.getCursor().line, null, "activeline");
+    },
+    onChange:function(){
+      // compile();
+      // console.log(editor.getValue());
+      console.log("onChange");
+     }
+  });
+
+  // $('.markdown-input').markdown();
 
 });

@@ -14,15 +14,7 @@
         var $preview = jQuery($textarea.attr('data-markdown-preview'));
 
         var update = function(){
-
-          console.log("--- markdown parse start ---");
-
-          // $preview.html(Markdown($textarea.val()));
-
-          var converter = new Markdown.Converter();
-          $preview.html(converter.makeHtml($textarea.val()));
-
-          console.log("--- markdown parse done ---");
+          $preview.html(marked($textarea.val()));
         }
 
         $textarea.bind('change keypress keyup keydown mousedown mouseup blur cut paste', update);
