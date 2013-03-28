@@ -16,7 +16,6 @@
 
 //= require codemirror
 //= require codemirror/utils/overlay
-//= require codemirror/modes/xml
 //= require codemirror/modes/markdown
 //= require codemirror/modes/gfm
 
@@ -38,21 +37,6 @@ $(function(){
     }
   });
 
-  var editor = CodeMirror.fromTextArea(document.getElementById("post_content"), {
-    mode: 'gfm',
-    theme: "default",
-    lineWrapping: true,
-    onCursorActivity: function() {
-      editor.setLineClass(hlLine, null, null);
-      hlLine = editor.setLineClass(editor.getCursor().line, null, "activeline");
-    },
-    onChange:function(){
-      // compile();
-      // console.log(editor.getValue());
-      console.log("onChange");
-     }
-  });
-
-  // $('.markdown-input').markdown();
+  $('.markdown-input').markdown();
 
 });

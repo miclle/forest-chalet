@@ -2,7 +2,9 @@
 
 (function($){
 
-  // needs js-markdown-extra.js at the moment
+  // Needs require this lib at the moment:
+  // CodeMirror https://github.com/marijnh/CodeMirror
+  // marked     https://github.com/chjj/marked
   jQuery.fn.extend({
     markdown: function(){
       return this.each( function(){
@@ -13,20 +15,31 @@
         var $textarea = jQuery(this);
         var $preview = jQuery($textarea.attr('data-markdown-preview'));
 
-        var update = function(){
-          $preview.html(marked($textarea.val()));
-        }
-
-        $textarea.bind('change keypress keyup keydown mousedown mouseup blur cut paste', update);
-
-        update();
-
-        $textarea.bind('scroll', function(){
-          var scrollTop = $textarea.scrollTop();
-          var textareaScrollHeight = $textarea[0].scrollHeight;
-          var previewScrollHeight = $preview[0].scrollHeight;
-          $preview.scrollTop( scrollTop / textareaScrollHeight * previewScrollHeight );
+        var editor = CodeMirror.fromTextArea(this, {
+          mode:         'gfm',
+          theme:        "default",
+          lineWrapping: true,
+          autofocus:    true,
+          showCursorWhenSelecting:  true
         });
+
+        editor.setSize("100%", "100%");
+
+        editor.on("change", function(instance, changeObj) {
+          $textarea.val(instance.getValue());
+          $preview.html(marked(instance.getValue()));
+        });
+
+        editor.on("scroll", function(instance) {
+
+          var scrollInfo = instance.getScrollInfo();
+
+          var previewScrollHeight = $preview[0].scrollHeight;
+
+          $preview.scrollTop( scrollInfo.top / scrollInfo.height * previewScrollHeight );
+        });
+
+        $preview.html(marked(editor.getValue()));
 
       });
 
