@@ -7,9 +7,9 @@ Miclle's blog
 
 JavaScript Markdown:
 
- 1. <https://github.com/ujifgc/pagedown>
- 2. <https://github.com/tanakahisateru/js-markdown-extra>
-
+ 1. CodeMirror: <https://github.com/marijnh/CodeMirror>
+ 2. marked: <https://github.com/chjj/marked>
+ 
 
 ##License
 ===
