@@ -27,6 +27,8 @@
 //= require codemirror-2.38/mode/markdown/markdown
 //= require codemirror-2.38/mode/gfm/gfm
 
+//= require codemirror/extend
+
 //= require markdown/marked
 
 //= require md5

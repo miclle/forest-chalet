@@ -16,9 +16,15 @@
   overflow-x: hidden;
 }
 
-.CodeMirror-activeline-background {background: #e8f2ff !important;}
+.CodeMirror-fullscreen {
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 9999;
+}
 
-/*.CodeMirror-matchingbracket {border:1px solid grey;color:black !important;background:yellow;}*/
+.CodeMirror-activeline-background {background: #e8f2ff !important;}
 
 .cm-tab {
    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);

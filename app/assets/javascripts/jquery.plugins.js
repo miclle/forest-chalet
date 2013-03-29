@@ -3,8 +3,9 @@
 (function($){
 
   // Needs require this lib at the moment:
-  // CodeMirror https://github.com/marijnh/CodeMirror
+  // CodeMirror Version 2.38 https://github.com/marijnh/CodeMirror
   // marked     https://github.com/chjj/marked
+  // codemirror/extend.js
   jQuery.fn.extend({
     markdown: function(){
       return this.each( function(){
@@ -17,15 +18,15 @@
         var $preview  = jQuery($textarea.attr('data-markdown-preview'));
 
         var editor = CodeMirror.fromTextArea(this, {
-          mode:         'markdown',
-          theme:        "default",
-          // lineNumbers: true,
-          matchBrackets: true,
-          lineWrapping: true,
-          autofocus:    true,
+          mode:           'markdown',
+          theme:          "default",
+          lineNumbers: true,
+          matchBrackets:  true,
+          lineWrapping:   true,
+          autofocus:      true,
           showCursorWhenSelecting:  true,
-          tabSize: 4,
-          indentUnit: 4,
+          tabSize: 2,
+          // indentUnit: 2,
           indentWithTabs: true,
           onChange: function(){
             $textarea.val(editor.getValue());
@@ -38,10 +39,18 @@
           },
           onCursorActivity: function() {
             editor.matchHighlight("CodeMirror-matchhighlight");
-          },
-          onCursorActivity: function() {
             editor.setLineClass(hlLine, null, null);
             hlLine = editor.setLineClass(editor.getCursor().line, null, "CodeMirror-activeline-background");
+          },
+          extraKeys: {
+            "Cmd-B": function(cm) { cm.insertStar("**") },
+            "Cmd-I": function(cm) { cm.insertStar("*") },
+            "Cmd-1": function(cm) { cm.insertTitle(1) },
+            "Cmd-2": function(cm) { cm.insertTitle(2) },
+            "Cmd-3": function(cm) { cm.insertTitle(3) },
+            "Cmd-4": function(cm) { cm.insertTitle(4) },
+            "Cmd-5": function(cm) { cm.insertTitle(5) },
+            "Cmd-6": function(cm) { cm.insertTitle(6) }
           }
         });
 
