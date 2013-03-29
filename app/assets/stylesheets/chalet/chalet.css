@@ -10,7 +10,10 @@
  *
  *= require bootstrap
  *= require jquery.ui.resizable
- *= require codemirror
+
+ *= require codemirror-2.38/lib/codemirror
+ *= require codemirror-2.38/patch
+
  *= require_self
  */
 
@@ -104,6 +107,7 @@ section{
 
 #markdown-input{ width: 50%; float: left; position: absolute; top: 0; bottom: 0;}
 
+/*
 .markdown-input{
   width: 100%;
   margin: 0;
@@ -124,12 +128,7 @@ section{
   -moz-box-shadow: none;
   box-shadow: none;
 }
-
-.CodeMirror-wrap{
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+*/
 
 #markdown-preview{
   width: 50%;

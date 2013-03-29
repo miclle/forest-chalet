@@ -42,8 +42,6 @@ gem 'sorcery', '~> 0.8.1'
 gem 'acts-as-taggable-on', '~> 2.3.3'
 
 # Markdown
-gem 'codemirror-rails', '~> 3.02'
-
 gem 'github-markdown', :require => 'github/markdown'
 
 gem 'redcarpet', '~> 2.2.2'   # https://github.com/vmg/redcarpet

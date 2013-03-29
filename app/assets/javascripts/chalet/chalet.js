@@ -14,10 +14,18 @@
 //= require jquery_ujs
 //= require jquery.ui.resizable
 
-//= require codemirror
-//= require codemirror/utils/overlay
-//= require codemirror/modes/markdown
-//= require codemirror/modes/gfm
+//= require codemirror-2.38/lib/codemirror
+
+//= require codemirror-2.38/lib/util/overlay
+//= require codemirror-2.38/lib/util/searchcursor
+//= require codemirror-2.38/lib/util/match-highlighter
+
+//= require codemirror-2.38/mode/xml/xml
+//= require codemirror-2.38/mode/javascript/javascript
+//= require codemirror-2.38/mode/ruby/ruby
+
+//= require codemirror-2.38/mode/markdown/markdown
+//= require codemirror-2.38/mode/gfm/gfm
 
 //= require markdown/marked
 
