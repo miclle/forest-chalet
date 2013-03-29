@@ -20,14 +20,13 @@
         var editor = CodeMirror.fromTextArea(this, {
           mode:           'markdown',
           theme:          "default",
-          lineNumbers: true,
+          // lineNumbers: true,
           matchBrackets:  true,
           lineWrapping:   true,
           autofocus:      true,
-          showCursorWhenSelecting:  true,
-          tabSize: 2,
-          // indentUnit: 2,
           indentWithTabs: true,
+          tabSize: 2,
+          showCursorWhenSelecting:  true,
           onChange: function(){
             $textarea.val(editor.getValue());
             $preview.html(marked(editor.getValue()));
@@ -43,8 +42,9 @@
             hlLine = editor.setLineClass(editor.getCursor().line, null, "CodeMirror-activeline-background");
           },
           extraKeys: {
-            "Cmd-B": function(cm) { cm.insertStar("**") },
-            "Cmd-I": function(cm) { cm.insertStar("*") },
+            "Cmd-B": function(cm) { cm.wrapSymbolTag("**") },
+            "Cmd-I": function(cm) { cm.wrapSymbolTag("*") },
+            "Cmd-U": function(cm) { cm.wrapSymbolTag("~~") },
             "Cmd-1": function(cm) { cm.insertTitle(1) },
             "Cmd-2": function(cm) { cm.insertTitle(2) },
             "Cmd-3": function(cm) { cm.insertTitle(3) },

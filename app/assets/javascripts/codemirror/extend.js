@@ -18,7 +18,7 @@
   /**
    * insert '*text*' '**text**'
    */
-  CodeMirror.defineExtension("insertStar", function(star) {
+  CodeMirror.defineExtension("wrapSymbolTag", function(star) {
     var selectString = this.getSelection();
     this.replaceSelection(star + selectString + star);
     var cursor = this.getCursor(false);
