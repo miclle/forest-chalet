@@ -45,6 +45,7 @@
             "Cmd-B": function(cm) { cm.wrapSymbolTag("**") },
             "Cmd-I": function(cm) { cm.wrapSymbolTag("*") },
             "Cmd-U": function(cm) { cm.wrapSymbolTag("~~") },
+            "Cmd-K": function(cm) { cm.wrapSymbolTag("`") },
             "Cmd-1": function(cm) { cm.insertTitle(1) },
             "Cmd-2": function(cm) { cm.insertTitle(2) },
             "Cmd-3": function(cm) { cm.insertTitle(3) },
