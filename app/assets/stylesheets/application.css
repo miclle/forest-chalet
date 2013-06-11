@@ -9,6 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require _font-awesome
+ *= require animate
+ *= require animate.patchs/patch
  *= require_self
  */
 
@@ -127,7 +129,7 @@ aside{
 }
 
 .brand{ width: 100%; position: absolute; bottom: 35px; text-align: center;}
-.brand a{
+.brand a, #setting-icon{
   display: inline-block;
   padding: 5px;
   font-size: 36px;
@@ -137,12 +139,15 @@ aside{
   -moz-opacity: 0.8;
   opacity: 0.8;
 }
-.brand a:hover{
+.brand a:hover, #setting-icon:hover{
   filter: alpha(opacity=100);
   -khtml-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
 }
+
+#setting-icon{ padding: 0; position: absolute; right: 10px; bottom: 5px; font-size: 18px;}
+#setting-icon:hover{}
 
 .copyright{ width: 100%; position: absolute; bottom: 15px; text-align: center; color: #CCC;}
 .copyright a{ color: #CCC;}
@@ -151,8 +156,8 @@ aside{
 #container{ padding: 75px 25% 50px 8%;}
 
 h2{ margin-bottom: 12px; font-size: 36px; line-height: 36px;}
-h2 a{ color: #333; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
-h2 a:hover{ color:#2886BC; }
+h2 a{ color: #2886BC; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+h2 a:hover{ color: #333; }
 h2 span{ float: right; font-size: 12px; color: #999;}
 
 article{ margin: 35px 0; padding-bottom: 10px; border-bottom: 1px solid #f2f2f2; }
@@ -160,12 +165,12 @@ article:first-child{ margin-top: 0;}
 article p{ padding-bottom: 5px;}
 article p:first-child:first-letter{ /*display: block; margin: 0; float: left; font-size: 200%;*/ }
 article h3{ padding-bottom: 5px; font-size:22px;}
+article .meta { margin:10px 0; line-height:18px; white-space:nowrap; color: #CCC;}
+article .meta a{ color: #CCC;}
+article .meta .comment{ float:right;}
 article .text{ }
 article .text .more{ text-align:right;}
 article .text .more a{ display:block;}
-article .meta { margin:10px 0; line-height:18px; white-space:nowrap; color: #999;}
-article .meta a{ color: #999;}
-article .meta .comment{ float:right;}
 
 .model{ margin: 20px 0;}
 

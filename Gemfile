@@ -21,18 +21,19 @@ end
 
 gem 'rails-i18n', '~> 0.7.2'
 
-gem 'jquery-rails', '~> 2.2.1'
+gem 'jquery-rails', '~> 2.2.2'
 
 gem 'bootstrap-sass', '~> 2.3.0.1'
 gem 'font-awesome-sass-rails', '~> 3.0.2.2'
 
-# gem 'animate-rails', '~> 0.0.3'
+gem 'animate-rails', '~> 0.0.3'
 
-# gem 'turbolinks', '~> 1.1.1'
+gem 'pjax_rails', '~> 0.3.4'
+# gem 'turbolinks', '~> 1.2.0'
 
 gem 'kaminari', '~> 0.14.1'
 
-gem 'jquery-ui-rails', '~> 4.0.1'
+gem 'jquery-ui-rails', '~> 4.0.3'
 
 gem 'rails-timeago', '~> 2.1.1'
 

@@ -23,9 +23,11 @@
       <p class="copyright">
         <span>© Miclle.Zheng . Powered by</span> <a href="https://github.com/miclle/forest-chalet" target="_blank" title="Forest Chalet">Forest Chalet</a>
       </p>
+
+      <%= link_to content_tag('i', nil, class: "icon-cog"), login_path, :id => "setting-icon" %>
     </aside>
 
-    <section id="main">
+    <section id="main" data-pjax-container>
       <%= yield %>
     </section>
 

@@ -12,3 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+// require turbolinks
+//= require jquery.pjax
+
+$(function() {
+  // pjax
+  $(document).pjax('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])', '[data-pjax-container]');
+
+  $('#setting-icon').hover(function(){
+    $(this).addClass('animated rotateRight').removeClass('rotateLeft');
+  }, function(){
+    $(this).addClass('animated rotateLeft').removeClass('rotateRight');
+  });
+
+});
