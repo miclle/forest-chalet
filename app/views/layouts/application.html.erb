@@ -11,151 +11,25 @@
   </head>
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <ul class="nav">
-            <li <%= raw controller_name == "posts" ? 'class="active"' : '' %>>
-                <%= link_to "Blog", posts_path%>
-              </li>
-              <li>
-                <a href="http://markdown.miclle.com/" target="_blank">Markdown</a>
-              </li>
-              <li>
-                <a href="http://www.delicious.com/micllezheng" target="_blank">Delicious</a>
-              </li>
-              <li>
-                <a href="http://github.com/miclle" target="_blank">Github</a>
-              </li>
-              <li>
-                <a href="http://www.flickr.com/photos/miclle/" target="_blank">Flickr</a>
-              </li>
-              <li>
-                <a href="http://twitter.com/miclle" target="_blank">Twitter</a>
-              </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <aside>
+      <div id="avatar-area"><a href="/"><%= image_tag gravatar("miclle.zheng@gmail.com", :size => 50) -%></a></div>
 
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-      <div id="header" class="header-posts">
-        <div class="shelld">
-          <div class="title">
-            <h1 class="logo">
-              <%= link_to "Miclle's Posts", posts_path %>
-            </h1>
-            <h2>
-              Softly sighs the rainbow, Stories seldom told.<br />
-              Flowing by the skyline, My love songs that never rhyme.<br />
-              I stand alone by my secret rainbow.
-            </h2>
-          </div>
-          <div class="mark">
-            <%= link_to "Post", posts_path %>
-          </div>
-        </div>
+      <div class="brand">
+        <!-- <a href="http://markdown.miclle.com/" target="_blank"><i class="icon-beaker"></i></a> -->
+        <a href="http://github.com/miclle" target="_blank"><i class="icon-github-sign"></i></a>
+        <a href="http://twitter.com/miclle" target="_blank"><i class="icon-twitter-sign"></i></a>
       </div>
 
-      <div id="middle">
-        <div class="shell">
+      <p class="copyright">
+        <span>© Miclle.Zheng . Powered by</span> <a href="https://github.com/miclle/forest-chalet" target="_blank" title="Forest Chalet">Forest Chalet</a>
+      </p>
+    </aside>
 
-        </div>
-      </div>
+    <section id="main">
+      <%= yield %>
+    </section>
 
-      <!-- Container -->
-      <div id="container">
-        <div class="shelld">
-          <%= yield %>
-          <div class="clear"></div>
-        </div>
-      </div><!-- End Container -->
-
-    </div>
-    <!-- End Wrapper -->
-
-
-    <!-- Footer -->
-    <div id="footer">
-      <div id="footer-bg">
-        <div class="shelld">
-
-          <div class="cols">
-            <!-- Bottom Col -->
-            <div class="col">
-              <h3>Links</h3>
-              <ul>
-                <li><a target="_blank" href="http://qefqei.com">http://qefqei.com</a></li>
-                <li><a target="_blank" href="http://blog.lxneng.com/">Eric Lo's Blog</a></li>
-                <li><a target="_blank" href="http://blog.hieee.com/">火哥的零碎</a></li>
-                <li><a target="_blank" href="http://ihower.tw/blog/">{|ihower.tw| blog }</a></li>
-                <li><a target="_blank" href="http://www.huangzhimin.com/">Richard Huang's Website</a></li>
-                <li><a target="_blank" href="http://rails-bestpractices.com/">Rails Best Practices</a></li>
-                <li><a target="_blank" href="http://topgeek.org/">TopGeek</a></li>
-                <li><a target="_blank" href="http://blog.pmcamp.org/">PM.Camp</a></li>
-                <li><a target="_blank" href="http://kenbeit.com/">kenshin54</a></li>
-        </ul>
-            </div>
-            <!-- End Bottom Col -->
-
-            <!-- Bottom Col -->
-            <div class="col">
-              <h3>Recent posts</h3>
-              <ul>
-                <% Post.first(8).each do |post| %>
-                  <li><%= link_to post.title, post %></li>
-                <% end %>
-              </ul>
-            </div>
-            <!-- End Bottom Col -->
-
-            <!-- Bottom Col -->
-            <!-- <div class="col col-right">
-              <h3>Newsletter</h3>
-              <div class="subscribe">
-                <p>NO SPAM! Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p><span class="field"><input class="blink" value="Enter your email" title="Enter your email" type="text" /></span></p>
-                <p>
-                  <input class="checkbox" id="check1" type="checkbox" />
-                  <label for="check1">Lorem ipsum dolor sit amet, consectetur </label>
-                </p>
-                <p>
-                  <input class="notext submit-button" value="Submit" type="submit" />
-                </p>
-              </div>
-            </div> -->
-            <!-- End Bottom Col -->
-
-            <div class="clear">&nbsp;</div>
-          </div>
-
-          <a href="#" class="toggle"></a>
-        </div>
-      </div>
-    </div>
-    <!-- End Footer -->
-
-    <!-- Bottom Navigation -->
-    <div id="bottom">
-      <div class="shelld">
-        <p class="left">
-          <%= link_to "Home", root_path %>
-          <%= link_to "Blog", posts_path%>
-          <a href="http://www.delicious.com/micllezheng" target="_blank">Delicious</a>
-          <a href="http://github.com/miclle" target="_blank">Github</a>
-          <a href="http://www.flickr.com/photos/miclle/" target="_blank">Flickr</a>
-          <%#= link_to "About", about_path %>
-          <%#= link_to "Contact", contact_path %>
-          <%= link_to "Twitter", "http://twitter.com/miclle", :class => "twitter-link", :target => "_blank" %>
-        </p>
-        <p class="right">
-          © Miclle.Zheng . Powered by <a href="https://github.com/miclle/forest-chalet" target="_blank" title="Forest Chalet">Forest Chalet</a>
-        </p>
-      </div>
-    </div>
-    <!-- End Bottom Navigation -->
+    <a id="fork-me-on-github" href="https://github.com/miclle" target="_blank"><img src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
 
     <div style="display:none">
       <script type="text/javascript" src="http://js.tongji.linezing.com/1660537/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/1660537/tongji.gif"/></a></noscript>

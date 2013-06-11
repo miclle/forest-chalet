@@ -1,74 +1,42 @@
-<!-- Content -->
-<div id="content">
+<div id="container">
 
   <% @posts.each do |post| %>
+    <article class="<%= cycle("even", "odd") -%>">
 
-    <!-- Post -->
-    <div class="post <%= cycle("even", "odd") -%>">
-
-      <div class="title">
-        <h2><%= link_to post.title, post %></h2>
+      <h2 class="title">
+        <%= link_to post.title, post %>
         <span class="date"><%= post.created_at.strftime("%Y.%m.%d") %></span>
+      </h2>
+
+      <div class="meta">
+        <% unless post.category_list.blank? %>
+        <span class="category">
+          Category:
+          <% post.category_list.each do |category| %>
+            <%= link_to category, {:controller => :posts, :action => :category, :name => category } %>
+          <% end %>
+        </span>
+        <% end %>
+
+        <% unless post.tag_list.blank? %>
+        <span class="tags">
+          Tags:
+          <% post.tag_list.each do |tag| %>
+            <%= link_to tag, {:controller => :posts, :action => :tag, :name => tag } %>
+          <% end %>
+        </span>
+        <% end %>
       </div>
 
       <div class="text">
         <%= raw post.content_html %>
       </div>
 
-      <div class="post-meta">
-
-        <!-- <div class="comment">
-          <%#= link_to "Comments: #{post.comments_count}", post_path(post, :anchor => "post-comment-anchor"), :class => "comment-it" %>
-        </div> -->
-
-        <% unless post.category_list.blank? %>
-        <div class="category">
-          Category:
-          <% post.category_list.each do |category| %>
-            <%= link_to category, {:controller => :posts, :action => :category, :name => category }%>
-          <% end %>
-        </div>
-        <% end %>
-
-        <% unless post.tag_list.blank? %>
-        <div class="tags">
-          Tags:
-          <% post.tag_list.each do |tag| %>
-            <%= link_to tag, {:controller => :posts, :action => :tag, :name => tag } %>
-          <% end %>
-        </div>
-        <% end %>
-
-      </div>
-
-      <div class="line">&nbsp;</div>
-    </div>
-    <!-- End Post -->
+    </article>
   <% end  %>
 
-  <!-- Pagging -->
-  <div class="blog-pagging blog-pagging-bottom">
-    <div class="blog-pagging-holder">
-      <%= paginate @posts %>
-    </div>
-  </div>
-  <!-- End Pagging -->
-
-</div>
-<!-- End Content -->
-
-<!-- Sidebar -->
-<div class="blog-sidebar" id="sidebar">
-
-  <div class="model">
-    <h2>CATEGORIES</h2>
-    <ul>
-      <% Post.category_counts.each do |category| %>
-        <li>
-          <%= link_to category.name, {:controller => :posts, :action => :category, :name => category.name }, :class=>"active" %>
-        </li>
-      <% end %>
-    </ul>
+  <div class="pagging-holder">
+    <%= paginate @posts %>
   </div>
 
   <div class="model">
@@ -81,14 +49,14 @@
   </div>
 
   <div class="model">
-    <h2>FILCKR</h2>
-    <!-- Start of Flickr Badge -->
-    <div class="flickr-badge">
-      <script type="text/javascript" src="http://www.flickr.com/badge_code.gne?count=8&display=random&size=square&nsid=49394281@N07&raw=1"></script>
-    </div>
-    <!-- End of Flickr Badge -->
-
+    <h2>CATEGORIES</h2>
+    <div class="content tags">
+      <% Post.category_counts.each do |category| %>
+        <li>
+          <%= link_to category.name, {:controller => :posts, :action => :category, :name => category.name }, :class=>"active" %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
 </div>
-<!-- End Sidebar -->

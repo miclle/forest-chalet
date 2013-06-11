@@ -1,36 +1,29 @@
-<!-- Content -->
-<div id="content">
+<div id="container">
 
-  <!-- Post -->
-  <div class="post">
+  <article>
 
-    <div class="title">
-      <h2><%= @post.title %></h2>
-      <span class="date"><%= @post.created_at.strftime("%Y年%m月%d日") %></span>
-    </div>
+    <h2 class="title">
+      <%= @post.title %>
+      <span class="date"><%= @post.created_at.strftime("%Y.%m.%d") %></span>
+    </h2>
 
     <div class="entry">
       <%= raw @post.content_html %>
     </div>
-    <div class="post-meta">
-      <p class="left">
+
+    <div class="meta">
+      <p>
         Posted in:
         <% @post.category_list.each do |category| %>
           <%= link_to category, {:controller => :posts, :action => :category, :name => category }%>
         <% end %>
       </p>
-      <p class="right">
-        <a href="#post-comment-anchor" class="comment-it">Be the newly to comment!</a>
-        Comments: <span id="count-comment"><%= @post.comments_count %></span>
-      </p>
-      <div class="clear">&nbsp;</div>
 
       <p>Tags:
         <% @post.tag_list.each do |tag| %>
           <%= link_to tag, {:controller => :posts, :action => :tag, :name => tag } %>
         <% end %>
       </p>
-      <div class="clear">&nbsp;</div>
     </div>
 
     <div class="line">&nbsp;</div>
@@ -50,13 +43,5 @@
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-
-  </div>
-  <!-- End Post -->
-
+  </article>
 </div>
-<!-- End Content -->
-
-<!-- Sidebar -->
-<%#= render "sidebar" %>
-<!-- End Sidebar -->

@@ -16,7 +16,6 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.3.0'
 end
 
@@ -25,6 +24,11 @@ gem 'rails-i18n', '~> 0.7.2'
 gem 'jquery-rails', '~> 2.2.1'
 
 gem 'bootstrap-sass', '~> 2.3.0.1'
+gem 'font-awesome-sass-rails', '~> 3.0.2.2'
+
+# gem 'animate-rails', '~> 0.0.3'
+
+# gem 'turbolinks', '~> 1.1.1'
 
 gem 'kaminari', '~> 0.14.1'
 

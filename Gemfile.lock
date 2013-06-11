@@ -69,6 +69,9 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.6)
       multipart-post (~> 1.1)
+    font-awesome-sass-rails (3.0.2.2)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     github-markdown (0.5.3)
     hike (1.2.1)
     httpauth (0.2.0)
@@ -189,6 +192,7 @@ DEPENDENCIES
   carrierwave (~> 0.6.2)
   carrierwave-upyun (= 0.1.6)
   coffee-rails (~> 3.2.2)
+  font-awesome-sass-rails (~> 3.0.2.2)
   github-markdown
   jquery-rails (~> 2.2.1)
   jquery-ui-rails (~> 4.0.1)
