@@ -39,5 +39,5 @@ span.CodeMirror-matchhighlight {
   background-repeat: repeat-x;
 }
 .CodeMirror-focused span.CodeMirror-matchhighlight {
-  background-color: #e7e4ff; !important
+  background-color: #e7e4ff !important;
 }
