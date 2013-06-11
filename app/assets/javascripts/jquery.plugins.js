@@ -70,4 +70,41 @@
     }
   });
 
+  jQuery.fn.extend({
+    verticalScrollCog : function(target){
+      var $target = $(target);
+      $(this).scroll(function(){
+        clearTimeout($target.data("scrollTimer"));
+        var deg = -$(this).scrollTop();
+        $target.removeClass('animated')
+        .css({
+          "-webkit-transform-origin": "center center",
+          "-moz-transform-origin"   : "center center",
+          "-o-transform-origin"     : "center center",
+          "transform-origin"        : "center center",
+          "-webkit-animation-name"  : "none",
+          "-moz-animation-name"     : "none",
+          "-o-animation-name"       : "none",
+          "animation-name"          : "none",
+          "-webkit-transform"       : "rotate("+deg+"deg)",
+          "-moz-transform"          : "rotate("+deg+"deg)",
+          "-o-transform"            : "rotate("+deg+"deg)",
+          "transform"               : "rotate("+deg+"deg)"
+        })
+        .data("scrollTimer", setTimeout(function(){
+          $target.css({
+            "-webkit-transform-origin": "",
+            "-moz-transform-origin"   : "",
+            "-o-transform-origin"     : "",
+            "transform-origin"        : "",
+            "-webkit-animation-name"  : "",
+            "-moz-animation-name"     : "",
+            "-o-animation-name"       : "",
+            "animation-name"          : ""
+          });
+        }, 250));
+      });
+    }
+  });
 })(jQuery);
+
