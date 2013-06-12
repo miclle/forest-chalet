@@ -14,7 +14,9 @@
 
   <div class="page-header">
     <div class="form-inline">
-    <%= f.text_field :title, class: "input-xxlarge", placeholder: "Post title", require: true %>
+    <%= f.text_field :title, :class => "input-xxlarge", :placeholder => "Post title", :require => true %>
+
+    <a href="#post-meta" role="button" class="btn" data-toggle="modal">Meta <i class="icon-arrow-down"></i></a>
 
     <%= f.submit "Save", class: "btn btn-info" %>
 
@@ -22,8 +24,28 @@
     </div>
   </div>
 
-  <div class="content-section" id="markdown-editor">
+  <!-- Modal -->
+  <div id="post-meta" class="" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
+    <div class="modal-body form-horizontal">
+      <div class="control-group">
+        <%= f.label :tag_list, "Tags", :class => "control-label" %>
+        <div class="controls">
+          <%= f.text_field :tag_list, :placeholder => "Tag..." %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :category_list, "Category", :class => "control-label" %>
+        <div class="controls">
+          <%= f.text_field :category_list, :placeholder => "Category" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="content-section" id="markdown-editor">
     <div id="markdown-preview" class="markdown-preview">
       Preview content
     </div>
@@ -31,7 +53,6 @@
     <div id="markdown-input">
       <%= f.text_area :content, class: "markdown-input", data: { "markdown-preview" => "#markdown-preview"} %>
     </div>
-
   </div>
 
 <% end %>

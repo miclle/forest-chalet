@@ -6,32 +6,26 @@
 <div class="content-section">
 
   <% @posts.each do |post| %>
-
-    <div class="post-item">
+    <article class="post-item">
       <h4>
         <%= link_to post.title, edit_chalet_post_path(post) %>
         <small class="date"><%= post.created_at.strftime("%Y.%m.%d") %></small>
       </h4>
 
-      <div class="text">
-        <%= truncate post.content, :length => 150, :separator => '...' %>
-      </div>
+      <div class="text"><%= truncate post.content, :length => 150, :separator => '...' %></div>
 
-      <div class="post-meta">
+      <div class="meta">
 
         <div class="comment">
-          <%= link_to "Comments: #{post.comments_count}", post_path(post, :anchor => "post-comment-anchor"), :class => "comment-it" %>
+          Comments: <%=  post.comments_count %>
         </div>
 
-        <div class="category">
-          Category: <%#= post.category_list %>
-        </div>
-        <div class="tags">
-          Tags: <%#= post.tag_list %>
-        </div>
+        <div class="category">Category: <%= post.category_list %></div>
+
+        <div class="tags">Tags: <%= post.tag_list %></div>
+
       </div>
-
-    </div>
+    </article>
   <% end  %>
 
 </div>

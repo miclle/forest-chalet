@@ -12,9 +12,10 @@ ForestChalet::Application.routes.draw do
 
   get "projects" => "posts#projects", :as => :projects
 
-  root :to => 'posts#index'
+  root :to => "posts#index"
 
   namespace :chalet do
+    root :to => "base#index"
     resources :posts, :except => :show
   end
 

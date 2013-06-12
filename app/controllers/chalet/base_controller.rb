@@ -5,4 +5,8 @@ class Chalet::BaseController < ApplicationController
 
   layout "chalet"
 
+  def index
+
+  end
+
 end

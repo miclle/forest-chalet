@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require jquery.ui.resizable
 
+//= require bootstrap
+
 //= require codemirror-2.38/lib/codemirror
 
 //= require codemirror-2.38/lib/util/overlay

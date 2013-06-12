@@ -9,6 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap
+
+ *= require _font-awesome
+
  *= require jquery.ui.resizable
 
  *= require codemirror-2.38/lib/codemirror
@@ -19,6 +22,7 @@
 
 html, body { width: 100%; height: 100%; }
 body{
+  min-width: 1280px;
   background: url("admin-bg.png") repeat-x;
 }
 
@@ -97,7 +101,7 @@ section{
 .content-section{
   overflow: auto;
   position: absolute;
-  top: 71px;
+  top: 171px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -159,6 +163,7 @@ section{
   display: block;
   float: left;
   width: 20%;
+  min-width: 224px;
   height: 250px;
   overflow: hidden;
   padding: 20px;
@@ -174,7 +179,10 @@ section{
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+.post-item .text{
+  height: 120px;
+  overflow: hidden;
+}
 
 
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <%= csrf_meta_tags %>
-    <title>Admin - ForestChalet</title>
+    <title>Admin - Forest-Chalet</title>
     <%= stylesheet_link_tag    "chalet/chalet", :media => "all" %>
     <%= javascript_include_tag "chalet/chalet" %>
   </head>
@@ -19,8 +19,12 @@
 
           <li class="nav-header">List header</li>
 
+          <li class="<%= 'active' if controller_name == "base" -%>">
+            <%= link_to content_tag('i', nil, class: "icon-white icon-home") + " Index", chalet_root_path %>
+          </li>
+
           <li class="<%= 'active' if controller_name == "posts" -%>">
-            <%= link_to content_tag('i', nil, class: "icon-white icon-folder-close") + " Post", chalet_posts_path %>
+            <%= link_to content_tag('i', nil, class: "icon-white icon-folder-open") + " Post", chalet_posts_path %>
           </li>
 
           <li class="divider"></li>
@@ -32,8 +36,6 @@
           <li>
             <%= link_to content_tag('i', nil, class: "icon-white icon-off") + " Logout", logout_path %>
           </li>
-
-          <li><a href="#">Help</a></li>
 
         </ul>
 
