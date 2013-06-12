@@ -25,7 +25,12 @@ $(function() {
   }, function(){
     $(this).addClass('animated rotateRight').removeClass('rotateLeft');
   }).click(function(){
-    $('#login').show().addClass('animated fadeInDown');
+    var $login = $('#login').addClass('animated');
+    if($login.data('show')){
+      $login.removeClass('fadeInDown').addClass('fadeOutDown').data('show', false);
+    }else{
+      $login.removeClass('fadeOutDown').addClass('fadeInDown').data('show', true);
+    }
     $(this).rotate(360);
   });
 
