@@ -1,19 +1,23 @@
-<%= form_tag sessions_path do %>
+<section class="loginform clearfix">
+  <%= form_tag sessions_path do %>
 
-  <%= alert %>
+    <%= alert %>
 
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
+    <ul>
+      <li>
+        <%= label_tag :email %>
+        <%= text_field_tag :email, params[:email], :placeholder => "yourname@email.com", :required => true, :tabindex => 1 %>
+      </li>
 
-  <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
+      <li>
+        <%= label_tag :password %>
+        <%= password_field_tag :password, nil, :placeholder => "password", :required => true, :tabindex => 2 %>
+      </li>
 
-  <div class="actions">
-    <%= submit_tag "Log in", :class => "btn" %>
-  </div>
+      <li>
+        <%= submit_tag "Log in", :class => "btn", :tabindex => 3 %>
+      </li>
+    </ul>
 
-<% end %>
+  <% end %>
+</section>

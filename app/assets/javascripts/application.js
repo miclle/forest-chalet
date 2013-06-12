@@ -24,6 +24,9 @@ $(function() {
     $(this).addClass('animated rotateLeft').removeClass('rotateRight');
   }, function(){
     $(this).addClass('animated rotateRight').removeClass('rotateLeft');
+  }).click(function(){
+    $('#login').show().addClass('animated fadeInDown');
+    $(this).rotate(360);
   });
 
   $(window).verticalScrollCog('#setting-icon');

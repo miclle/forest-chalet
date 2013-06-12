@@ -1,6 +1,6 @@
 ForestChalet::Application.routes.draw do
 
-  get "login" => "sessions#new", :as => "login"
+  # get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#destroy", :as => "logout"
 
   resources :sessions

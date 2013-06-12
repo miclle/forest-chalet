@@ -38,6 +38,10 @@ time, mark, audio, video {
 
 html { height: 100%;}
 
+body, input, select, textarea{
+  font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -45,9 +49,9 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-  line-height: 1;
+  min-width: 1024px;
   height: 100%;
-  font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
+  line-height: 1;
   font-size:18px;
   line-height:25px;
   color:#444;
@@ -96,8 +100,17 @@ a.img:hover img{ border:solid 1px #a2a098;}
 ::-moz-selection { background: #e2eae2; }
 ::-webkit-selection { background: #e2eae2; }
 
+:focus { outline: 0; }
+
+.clearfix { *zoom: 1; }
+.clearfix:before,
+.clearfix:after { content: ""; display: table;}
+.clearfix:after { clear: both; visibility: hidden; line-height: 0; height: 0;}
+
 aside{
   width: 30%;
+  min-width: 305px;
+  min-height: 305px;
   position: fixed;
   top: 0;
   left: 0;
@@ -128,7 +141,9 @@ aside{
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.3);
 }
 
-.brand{ width: 100%; position: absolute; bottom: 35px; text-align: center;}
+#aside-footer{ width: 100%; position: absolute; bottom: 10px; text-align: center; color: #CCC;}
+
+.brand{ padding: 0 25px;}
 .brand a{
   display: inline-block;
   padding: 5px;
@@ -146,6 +161,10 @@ aside{
   opacity: 1;
 }
 
+.copyright{ padding: 10px 25px; }
+.copyright a{ color: #CCC;}
+.copyright a:hover{ color: #FFF;}
+
 #setting-icon{
   padding: 0;
   position: absolute;
@@ -158,9 +177,6 @@ aside{
   -moz-opacity: 0.8;
   opacity: 0.8;
 }
-
-.copyright{ width: 100%; position: absolute; bottom: 15px; text-align: center; color: #CCC;}
-.copyright a{ color: #CCC;}
 
 #main{ margin-left: 30%;}
 #container{ padding: 75px 25% 50px 8%;}
@@ -211,6 +227,73 @@ div.tagsinput div { display:block; float: left; }
 
 .pagging-holder { height: auto; overflow: hidden; margin: 10px 0;}
 .pagging-holder .pagination{ float: right;}
+
+#login{
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 35%;
+}
+#login form {
+  margin: 30px;
+  padding: 15px;
+  background-color: rgba(250,250,250,0.5);
+  border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2),
+          inset 0px 1px 0px 0px rgba(250, 250, 250, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+#login ul { padding: 0; margin: 0 auto;}
+#login li { display: inline; float: left; width: 40%; margin-right: 2%;}
+#login li:last-child{ width: 15%; margin-right: 0;}
+#login label { display: block; height: 25px; color: #FFF; }
+#login input:not([type=submit]) {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  vertical-align: baseline;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(250, 250, 250, 0.5) ;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#login input[type=submit] {
+  display: block;
+  width: 100%;
+  color: #EFEFEF;
+  padding: 5px;
+  margin-top: 27px;
+  border-radius: 3px;
+  text-align: center;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  background: #64c8ef; /* Old browsers */
+  background: -moz-linear-gradient(top,  #64c8ef 0%, #00a2e2 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#64c8ef), color-stop(100%,#00a2e2)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #64c8ef 0%,#00a2e2 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #64c8ef 0%,#00a2e2 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #64c8ef 0%,#00a2e2 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #64c8ef 0%,#00a2e2 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#64c8ef', endColorstr='#00a2e2',GradientType=0 ); /* IE6-9 */
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#login input[type=submit]:hover{ color: #FFF;}
+
+
+
+
+
+
+
+
+
 
 .submit-button { display:block; width:94px; height:44px; margin:0 0 0 auto; cursor:pointer; background:url(submit-button.png);}
 .submit-button:hover { background:url(submit-button-h.png)}

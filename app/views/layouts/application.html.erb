@@ -14,17 +14,43 @@
     <aside>
       <div id="avatar-area"><a href="/"><%= image_tag gravatar("miclle.zheng@gmail.com", :size => 50) -%></a></div>
 
-      <div class="brand">
-        <!-- <a href="http://markdown.miclle.com/" target="_blank"><i class="icon-beaker"></i></a> -->
-        <a href="http://github.com/miclle" target="_blank"><i class="icon-github-sign"></i></a>
-        <a href="http://twitter.com/miclle" target="_blank"><i class="icon-twitter-sign"></i></a>
-      </div>
+      <section id="login">
+        <%= form_tag sessions_path, :class => "clearfix" do %>
 
-      <p class="copyright">
-        <span>© Miclle.Zheng . Powered by</span> <a href="https://github.com/miclle/forest-chalet" target="_blank" title="Forest Chalet">Forest Chalet</a>
-      </p>
+          <%= alert %>
 
-      <%= link_to content_tag('i', nil, class: "icon-cog"), login_path, :id => "setting-icon" %>
+          <ul class="clearfix">
+            <li>
+              <%= label_tag :email %>
+              <%= text_field_tag :email, params[:email], :placeholder => "yourname@email.com", :required => true, :tabindex => 1 %>
+            </li>
+
+            <li>
+              <%= label_tag :password %>
+              <%= password_field_tag :password, nil, :placeholder => "password", :required => true, :tabindex => 2 %>
+            </li>
+
+            <li>
+              <%= submit_tag "Log in", :class => "btn", :tabindex => 3 %>
+            </li>
+          </ul>
+
+        <% end %>
+      </section>
+
+      <section id="aside-footer">
+        <div class="brand">
+          <!-- <a href="http://markdown.miclle.com/" target="_blank"><i class="icon-beaker"></i></a> -->
+          <a href="http://github.com/miclle" target="_blank"><i class="icon-github-sign"></i></a>
+          <a href="http://twitter.com/miclle" target="_blank"><i class="icon-twitter-sign"></i></a>
+        </div>
+
+        <div class="copyright">
+          <span>&copy; Miclle.Zheng . Powered by</span> <a href="https://github.com/miclle/forest-chalet" target="_blank" title="Forest Chalet">Forest Chalet</a>
+        </div>
+      </section>
+
+      <%= link_to content_tag('i', nil, class: "icon-cog"), "javascript:;", :id => "setting-icon" %>
     </aside>
 
     <section id="main" data-pjax-container>
