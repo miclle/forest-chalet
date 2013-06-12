@@ -2,9 +2,7 @@
 
   <nav class="breadcrumb">
     <h3 class="article-title">
-      <%= link_to "All Articles", posts_path %>
-      <%= content_tag('i', nil, class: "icon-arrow-right") + content_tag('span', params[:name]) unless params[:name].blank? %>
-      <a href="#" class="action">Category<i class="icon-arrow-right"></i></a>
+      <%= link_to "All Projects", projects_path %>
     </h3>
   </nav>
 
@@ -41,30 +39,6 @@
       </div>
 
     </article>
-  <% end  %>
-
-  <div class="pagging-holder">
-    <%= paginate @posts %>
-  </div>
-
-  <div class="model">
-    <h2>TAGS</h2>
-    <div class="content tags">
-      <% tag_cloud(Post.tag_counts, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-        <%= link_to tag.name, {:controller => :posts, :action => :tag, :name => tag.name }, :class => css_class %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="model">
-    <h2>CATEGORIES</h2>
-    <div class="content tags">
-      <% Post.category_counts.each do |category| %>
-        <li>
-          <%= link_to category.name, {:controller => :posts, :action => :category, :name => category.name }, :class=>"active" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+  <% end %>
 
 </div>

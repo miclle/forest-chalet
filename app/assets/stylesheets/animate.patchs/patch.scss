@@ -2,3 +2,10 @@
  *= require animate.patchs/rotateRight
  *= require animate.patchs/rotateLeft
  */
+
+ .animated {
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}

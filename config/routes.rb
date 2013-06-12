@@ -10,6 +10,8 @@ ForestChalet::Application.routes.draw do
 
   resources :posts, :only => [:index, :show]
 
+  get "projects" => "posts#projects", :as => :projects
+
   root :to => 'posts#index'
 
   namespace :chalet do

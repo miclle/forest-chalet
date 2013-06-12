@@ -8,9 +8,13 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require normalize
  *= require _font-awesome
  *= require animate
  *= require animate.patchs/patch
+
+ * require CassettePlayer/player
+
  *= require_self
  */
 
@@ -170,6 +174,7 @@ aside{
   position: absolute;
   right: 10px;
   bottom: 5px;
+  z-index: 9999;
   font-size: 24px;
   color: #FFF;
   filter: alpha(opacity=80);
@@ -179,12 +184,33 @@ aside{
 }
 
 #main{ margin-left: 30%;}
-#container{ padding: 75px 25% 50px 8%;}
+#container{ padding: 50px 25% 50px 8%;}
 
 h2{ margin-bottom: 12px; font-size: 36px; line-height: 36px;}
 h2 a{ color: #2886BC; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
 h2 a:hover{ color: #333; }
 h2 span{ float: right; font-size: 12px; color: #999;}
+
+.breadcrumb {
+  border-top: 1px solid #DEDEDC;
+  border-bottom: 1px solid #DEDEDC;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #B3B3B1;
+}
+.breadcrumb h3{
+  line-height: 40px;
+  font-weight: bold;
+}
+.breadcrumb a, .breadcrumb span{
+  display: inline-block;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #B3B3B1;
+}
+.breadcrumb span{ margin-left: 5px;}
+.breadcrumb a.action{ float: right;}
 
 article{ margin: 35px 0; padding-bottom: 10px; border-bottom: 1px solid #f2f2f2; }
 article:first-child{ margin-top: 0;}
@@ -290,41 +316,7 @@ div.tagsinput div { display:block; float: left; }
 #login input[type=submit]:hover{ color: #FFF;}
 
 
-
-
-
-
-
-
-
-
-.submit-button { display:block; width:94px; height:44px; margin:0 0 0 auto; cursor:pointer; background:url(submit-button.png);}
-.submit-button:hover { background:url(submit-button-h.png)}
-
 .alert { padding:0 0 0 20px; background:url(alert.gif) no-repeat 0 3px; color:#8d2c2d; white-space:nowrap; }
-
-.gallery {}
-.gallery ul{ list-style-type:none; font-size:0; line-height:0; width:991px; margin-right:-11px; padding:0 !important; }
-.gallery ul li{ display:inline; float:left; margin-right:11px; margin-bottom:20px;}
-
-.sitemap ul{ list-style-type:none;}
-.sitemap ul li { padding:0 0 4px 0; }
-.sitemap ul li li{ padding:0 0 0 16px; }
-.sitemap ul li a{ background:url(buls.gif) no-repeat 0 -67px; padding:0 0 0 16px;}
-.sitemap ul li li { font-size:11px;}
-.sitemap ul li li a{ background:transparent; padding:0; color:#453e34; text-decoration:underline;}
-.sitemap ul li li a:hover{ color:#8d2c2d; text-decoration:none;}
-
-#screen { background:#fff; width:100%; height:100%; position:absolute; top:0; left:0; z-index:100; display:none;
-          opacity:0.8; -moz-opacity:0.8; filter:alpha(opacity=80);}
-
-.msg-thanks { padding:10px; background:#f1efe8; margin-bottom:12px; border-top:solid 1px #d0cdc3; border-bottom:solid 1px #d0cdc3; color:#2d758d;}
-
-.under { text-align:center; padding-top:100px; }
-.under h3{ color:#2d758d; font-size:20px; padding-bottom:13px; }
-.under h6{ padding-bottom:10px; }
-.under h1#logo{ position:static; top:0; margin:0 auto; }
-.under-ico { display:block; width:142px; height:223px; background:url(under.png); margin:0 auto; }
 
 /* Tag cloud style */
 .css1 { font-size:1.0em; }

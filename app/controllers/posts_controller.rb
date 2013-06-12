@@ -11,6 +11,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def projects
+    @posts = Post.tagged_with("Project", :on => :categories )
+  end
+
   def category
     if params[:name].nil?
       @posts = Post.page params[:page]

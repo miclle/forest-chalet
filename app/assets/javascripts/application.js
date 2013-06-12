@@ -16,6 +16,11 @@
 //= require jquery.pjax
 //= require jquery.plugins
 
+// require CassettePlayer/modernizr.custom.69142
+// require CassettePlayer/transform
+// require CassettePlayer/knobKnob.jquery
+// require CassettePlayer/jquery.cassette
+
 $(function() {
   // pjax
   $(document).pjax('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])', '[data-pjax-container]');
@@ -25,15 +30,19 @@ $(function() {
   }, function(){
     $(this).addClass('animated rotateRight').removeClass('rotateLeft');
   }).click(function(){
-    var $login = $('#login').addClass('animated');
-    if($login.data('show')){
-      $login.removeClass('fadeInDown').addClass('fadeOutDown').data('show', false);
-    }else{
-      $login.removeClass('fadeOutDown').addClass('fadeInDown').data('show', true);
-    }
     $(this).rotate(360);
+    setTimeout(function(){
+      var $login = $('#login').addClass('animated');
+      if($login.data('show')){
+        $login.removeClass('fadeInDown').addClass('fadeOutDown').data('show', false);
+      }else{
+        $login.removeClass('fadeOutDown').addClass('fadeInDown').data('show', true);
+      }
+    }, 250);
   });
 
   $(window).verticalScrollCog('#setting-icon');
+
+  // $('#vc-container').cassette();
 
 });
